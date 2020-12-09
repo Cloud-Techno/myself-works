@@ -158,10 +158,10 @@ const ferdi = {
 console.log(ferdi); 
 ----*/
 
-
+/////////////////////////////////
 
 //REST OBJECT
-
+/* 
 const person = {
     name: "Ferdi",
     surname: "Ates",
@@ -174,8 +174,27 @@ const person = {
 const {name, ...rest} = person;
 
 console.log(name);
-console.log(rest);
+console.log(rest); */
 
+//output:
+
+//Ferdi
+// {surname: "Ates", age: 31, fullname: ƒ} rest object output is as object
+////////////////////////////////////
+
+//OBJECT VALUES - OBJECT ENTRIES
+const person = {
+    name: "Ferdi",
+    surname: "Ates",
+    age:31,
+    fullname(){
+        return this.name + " " + this.surname
+    }
+} 
+
+console.log(Object.keys(person));
+console.log(Object.values(person));
+console.log(Object.entries(person));
 
 
 
