@@ -139,12 +139,9 @@ for (const{title,author,pageNum} of books){
 let person2 = {...person};
 console.log(person2);
 
+*/
 
-
-
-
---------- */
-
+/* 
 const myObj1 = {
     name: 'ferdi',
     age:6
@@ -158,6 +155,29 @@ const ferdi = {
     ...myObj1,
     school:"ETH University", 
     ...myObj2};
-console.log(ferdi);
+console.log(ferdi); 
+----*/
+
+
+
+//REST OBJECT
+
+const person = {
+    name: "Ferdi",
+    surname: "Ates",
+    age:31,
+    fullname(){
+        return this.name + " " + this.surname
+    }
+} 
+
+const {name, ...rest} = person;
+
+console.log(name);
+console.log(rest);
+
+
+
+
 
 
