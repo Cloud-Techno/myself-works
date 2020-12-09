@@ -79,19 +79,23 @@ console.log(ferdi.fullname());
 
 //COMPUTED PROPERTY NAMES
 
-/* let prop1 = 'main';
+/* let prop1 = 'name';
 let myObj = {
     [prop1] : 'ferdi'
 }
 console.log(myObj);
-------- */
+
+output:
+{name: "ferdi"} */
+
+//////////
 
 //ESCA6 USINING
 /* const person = {
     name: "Ferdi",
     surname: "Ates",
     age:31,
-    fullname(){
+    fullname(){                // no function word
         return this.name + " " + this.surname
     }
 } 
@@ -123,6 +127,8 @@ console.log(myObj);
 for (const{title,author,pageNum} of books){
     console.log(title + " "+ author + " "+ pageNum);
 } 
+]output:
+yellow orange cici 296
 -----------------*/
 
 
@@ -183,7 +189,7 @@ console.log(rest); */
 ////////////////////////////////////
 
 //OBJECT VALUES - OBJECT ENTRIES
-const person = {
+/* const person = {
     name: "Ferdi",
     surname: "Ates",
     age:31,
@@ -194,7 +200,7 @@ const person = {
 
 console.log(Object.keys(person));
 console.log(Object.values(person));
-console.log(Object.entries(person));
+console.log(Object.entries(person)); */
 
 
 
