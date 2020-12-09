@@ -58,7 +58,7 @@ person1.fullname();
 console.log(person1.age); */
 
 // Object create with Object.create() code // inheritance
-const person = {
+/* const person = {
     name: "Ferdi",
     surname: "Ates",
     age:31,
@@ -66,12 +66,98 @@ const person = {
     fullname: function(){
         return this.name + " " + this.surname;
     }
-}
+} */
 
-const ferdi = Object.create(person);
+/* const ferdi = Object.create(person);
 ferdi.name = "Ferdi";
 ferdi.surname ='Ates';
 ferdi.age = 31;
 
 console.log(ferdi);
-console.log(ferdi.fullname());
+console.log(ferdi.fullname()); 
+-------*/
+
+//COMPUTED PROPERTY NAMES
+
+/* let prop1 = 'main';
+let myObj = {
+    [prop1] : 'ferdi'
+}
+console.log(myObj);
+------- */
+
+//ESCA6 USINING
+/* const person = {
+    name: "Ferdi",
+    surname: "Ates",
+    age:31,
+    fullname(){
+        return this.name + " " + this.surname
+    }
+} 
+--------*/
+
+//OBJECT DESTRUCTURING
+/* const books = [
+    {
+        title: "RED ORANGE",
+        author: 'Alexander',
+        pageNum:296,
+        topic:'about red orange benefits'
+
+    },
+    {
+        title: "BLUE ORANGE",
+        author: 'Micheal',
+        pageNum:296,
+        topic:'about blue orange benefits'
+    },
+    {
+        title: "YELLOW ORANGE",
+        author: 'CICI',
+        pageNum:296,
+        topic:'about yellow orange benefits'
+    }
+]
+
+for (const{title,author,pageNum} of books){
+    console.log(title + " "+ author + " "+ pageNum);
+} 
+-----------------*/
+
+
+//SPREAD OPERATOR IN OBJECT LITERALS
+
+/* const person = {
+    name: "Ferdi",
+    surname: "Ates",
+    age:31,
+    fullname(){
+        return this.name + " " + this.surname
+    }
+} 
+let person2 = {...person};
+console.log(person2);
+
+
+
+
+
+--------- */
+
+const myObj1 = {
+    name: 'ferdi',
+    age:6
+}
+const myObj2 = {
+    job: 'student',
+    gender:'male'
+}
+
+const ferdi = { 
+    ...myObj1,
+    school:"ETH University", 
+    ...myObj2};
+console.log(ferdi);
+
+
