@@ -80,8 +80,8 @@ const ferdi = {
 }
 console.log(ferdi.fullName());
 
-output:
-true
- //after 2 second
- false
- true
+//output:
+//true
+ ///////after 2 second
+// false
+ //true
