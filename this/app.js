@@ -1,4 +1,4 @@
-/* function Person (name,surname,age,){
+ function Person (name,surname,age,){
     this.name = name;
     this.surname=surname;
     this.age = age;
@@ -7,12 +7,12 @@
     }
 }
 
- */
+Person();
 
 
 
 //class version
-class Person {
+/* class Person {
     constructor(name,surname,age){
         this.name = name;
         this.surname=surname;
@@ -28,7 +28,7 @@ const ferdi = new Person ("Ferdi","Ates",32);
 const derya = new Person ("Derya","Ates",32);
 
 console.log(ferdi);
-console.log(derya); 
+console.log(derya);  */
 
 
 //////////////////////////////
