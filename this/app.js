@@ -1,4 +1,4 @@
- function Person (name,surname,age,){
+/*  function Person (name,surname,age,){
     this.name = name;
     this.surname=surname;
     this.age = age;
@@ -8,7 +8,7 @@
 }
 
 Person();
-
+ */
 
 
 //class version
@@ -50,3 +50,13 @@ console.log(ferdi.fullName()); */
 //{name: "Ferdi", age: 5, surname: "ates", fullName: ƒ}
 //{name: "Ferdi", age: 5, surname: "ates", fullName: ƒ}
 //Ferdi ates
+
+const vedat = {
+    name: "vedat",
+    fullName: function(){
+        console.log(this ===vedat); // reference in this object: output "ferdi" 5 "ates"
+        console.log(this === window)
+    }
+}
+const fun = vedat.fullName;
+console.log(fun());
