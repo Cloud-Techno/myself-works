@@ -7,6 +7,11 @@ const urlElement = document.querySelector("#url");
 
 const ui = new UI();
 
+//create Object for Storage
+const storage = new Storage();
+
+
+
 //All events upload
 
 eventListeners();
@@ -30,6 +35,8 @@ if ( title === "" || director === "" || url === ""){
         const newFilm = new Film(title,director,url);
 
         ui.addFilmToUI(newFilm);
+        storage.addFilmToStorage(newFilm);
+        ui.displayMessages('Film added as succesfully...')
     }
 
     ui.clearInputs(titleElement,urlElement,directorElement);
