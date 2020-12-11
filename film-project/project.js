@@ -23,6 +23,7 @@ function addFilm(e){
 
 if ( title === "" || director === "" || url === ""){
     //Error warning
+    ui.displayMessages("Input all information",'danger');
 }
     else {
         /* newFilm */
@@ -30,6 +31,7 @@ if ( title === "" || director === "" || url === ""){
 
         ui.addFilmToUI(newFilm);
     }
+
     ui.clearInputs(titleElement,urlElement,directorElement);
 
     e.preventDefault();
