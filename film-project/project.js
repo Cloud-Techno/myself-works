@@ -30,7 +30,7 @@ if ( title === "" || director === "" || url === ""){
 
         ui.addFilmToUI(newFilm);
     }
-
+    ui.clearInputs(titleElement,urlElement,directorElement);
 
     e.preventDefault();
 }
