@@ -1,10 +1,7 @@
 function UI(){
 }
 
-UI.prototype.addFilmToUI = function(newFilm){
 
-    console.log(newFilm);
-}
 UI.prototype.addFilmToUI = function(newFilm){
 
 const filmList = document.getElementById("films");
