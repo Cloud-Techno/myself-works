@@ -2,24 +2,27 @@ const form = document.getElementById("film-form");
 const titleElement = document.querySelector("#title");
 const directorElement = document.querySelector("#director");
 const urlElement = document.querySelector("#url");
-
-// Start UI Object
-
-const ui = new UI();
-
-//create Object for Storage
-const storage = new Storage();
+const cardBody = document.querySelectorAll('.card-body')[1];
+const clear = document.getElementById("clear-films");
 
 
 
-//All events upload
+//All events up
 
 eventListeners();
 
 function eventListeners(){
     form.addEventListener("submit",addFilm);
+    document.addEventListener('DOMContentLoaded',function(){
+        let films = Storage.getFilmsFromStorage();
+        UI.loadAllFilms(films);
+    });
+
+    cardBody.addEventListener('click',deleteFilm);
+    clear.addEventListener('click',clearAllFilms);
 
 }
+
 
 function addFilm(e){
     const title = titleElement.value;
@@ -28,18 +31,34 @@ function addFilm(e){
 
 if ( title === "" || director === "" || url === ""){
     //Error warning
-    ui.displayMessages("Input all information",'danger');
+    UI.displayMessages("Input all information",'danger');
 }
     else {
         /* newFilm */
         const newFilm = new Film(title,director,url);
 
-        ui.addFilmToUI(newFilm);
-        storage.addFilmToStorage(newFilm);
-        ui.displayMessages('Film added as succesfully...')
+        UI.addFilmToUI(newFilm);
+        Storage.addFilmToStorage(newFilm);
+        UI.displayMessages('Film added as succesfully...')
     }
 
-    ui.clearInputs(titleElement,urlElement,directorElement);
+        UI.clearInputs(titleElement,urlElement,directorElement);
 
     e.preventDefault();
+}
+function deleteFilm(e){
+    if(e.target.id === 'delete-film'){
+        UI.deleteFilmFromUI(e.target);
+        Storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent)
+        
+        UI.displayMessages("Process of delete is succesful...",'success');
+    }
+}
+function clearAllFilms(){
+    if(confirm('Are you sure?')){
+
+        UI.clearAllFilmsFromUI();
+        Storage.clearAllFilmsFromStorage();
+    }
+    
 }
