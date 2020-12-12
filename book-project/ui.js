@@ -24,9 +24,23 @@ UI.prototype.displayMessage = function(message,type){
 
     setTimeout(function(){
         div.remove();
+  },2000);
+}
 
+UI.prototype.loadAllBooks = function(books){
+    const bookList = document.getElementById('books');
 
-    },2000);
+    books.forEach(function(book){
+        bookList.innerHTML +=`
+        <tr>
+                <td><img src="${books.url}" class="img-fluid img-thumbnail"></td>
+                    <td>${books.autor}</td>
+                    <td>${books.name}</td>
+                    <td><a href="#" id = "delete-film" class = "btn btn-danger">Filmi Sil</a></td>
+        </tr>`;
+});
+}
 
-
+UI.prototype.deleteBookFromUI = function(element){
+    element.parentElement.parentElement.remove();
 }
