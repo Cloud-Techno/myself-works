@@ -8,6 +8,10 @@ const urlElement = document.getElementById('url');
 
 const ui = new UI();
 
+// storage object create
+
+const storage = new Storage();
+
 //ALL event create
 
 eventListener();
@@ -31,6 +35,7 @@ function addFilm(e){
         const newBook = new Book(name,autor,url);
 
         ui.addBookToUI(newBook);
+        storage.addBookToStorage(newBook);
     }
 e.preventDefault();
 }
