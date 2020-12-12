@@ -1,42 +1,38 @@
-const form = document.getElementById("film-form");
-const titleElement = document.getElementById('title');
-const directorElement = document.getElementById('director');
+const nameElement = document.getElementById('name');
+const form = document.getElementById('book-form');
+const autorElement = document.getElementById('autor');
 const urlElement = document.getElementById('url');
 
-//objeler basliyor
+
+// objects  create
 
 const ui = new UI();
 
+//ALL event create
+
+eventListener();
+
+function eventListener(e){
+    form.addEventListener('click',addFilm);
 
 
 
-eventListeners();
-function eventListeners(){
-form.addEventListener('submit',addFilm);
 
-
-
+    e.preventDefault();
 }
 
 
+function addFilm (){
+    const name= nameElement.value;
+    const autor= autorElement.value;
+    const url= urlElement.value;
 
-
-function addFilm(e){
-    const title = titleElement.value;
-    const director = directorElement.value;
-    const url = urlElement.value;
-
-    if(title === "" || director === "" || url === ""){
-        ui.dispalyMessage("Lutfen tum degerleri giriniz",'danger')
+    if (name === '' || autor === "" || url === ""){
+        ui.displayMessage('Please enter Information','danger');
     }
-    else {
-        const newFilm = new Film(title,director,url); //obje olusturuyoruz
 
-        ui.addFilmToUI(newFilm);
 
-    }
-    
-    ui.clearInputs(titleElement,directorElement,urlElement);
 
-    e.preventDefault();
+
+
 }
