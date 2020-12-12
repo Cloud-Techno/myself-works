@@ -12,27 +12,25 @@ const ui = new UI();
 
 eventListener();
 
-function eventListener(e){
-    form.addEventListener('click',addFilm);
+function eventListener(){
+    form.addEventListener('submit',addFilm);
 
-
-
-
-    e.preventDefault();
+    
 }
 
 
-function addFilm (){
+function addFilm(e){
     const name= nameElement.value;
     const autor= autorElement.value;
     const url= urlElement.value;
 
     if (name === '' || autor === "" || url === ""){
-        ui.displayMessage('Please enter Information','danger');
+        ui.displayMessage('Please enter Info...','danger');
     }
+    else {
+        const newBook = new Book(name,autor,url);
 
-
-
-
-
+        ui.addBookToUI(newBook);
+    }
+e.preventDefault();
 }
