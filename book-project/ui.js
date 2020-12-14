@@ -47,7 +47,9 @@ UI.prototype.displayMessage = function(message,type){
             </tr>
       `;
      });
-    
+    }
 
+    UI.prototype.deleteBookFromUI = function(element){
+        element.parentElement.parentElement.remove();
 
- }
+    }
