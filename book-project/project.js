@@ -56,7 +56,10 @@ function deleteBook(e){
    }
 
    function deleteAll(){
-       ui.clearAllBooksFromUI();
-       storage.clearAllBooksFromStorage();
+       if (confirm('Are you sure?')){
+        ui.clearAllBooksFromUI();
+        storage.clearAllBooksFromStorage();
+       }
+      
 
    }
