@@ -37,12 +37,11 @@ UI.prototype.displayMessage = function(message,type){
      const bookList = document.getElementById('books');
 
      books.forEach(function(book){
-
          bookList.innerHTML += `
             <tr>
                 <td><img src="${book.url}" class="img-fluid img-thumbnail"></td>
-                <td>${book.autor}</td>
                 <td>${book.title}</td>
+                <td>${book.autor}</td>
                 <td><a href="#" id = "delete-book" class = "btn btn-danger">Book Delete</a></td>
             </tr>
       `;
@@ -52,4 +51,12 @@ UI.prototype.displayMessage = function(message,type){
     UI.prototype.deleteBookFromUI = function(element){
         element.parentElement.parentElement.remove();
 
+    }
+    UI.clearAllFilmsFromUI= function(){
+        const filmList = document.getElementById('books');
+
+        while(filmList.firstElementChild !== null){
+            filmList.firstElementChild.remove();
+
+        }
     }
