@@ -8,9 +8,15 @@ UI.prototype.addBookToUI = function(newBook){
     <tr>
             <td><img src="${newBook.url}" class="img-fluid img-thumbnail"></td>
                 <td>${newBook.autor}</td>
-                <td>newBook.name</td>
+                <td>${newBook.name}</td>
                 <td><a href="#" id = "delete-film" class = "btn btn-danger">Filmi Sil</a></td>
     </tr>`;
+}
+ui.prototype.clearInputs = function(element1,element2,element3){
+    element1.value = '';
+    element2.value = '';
+    element3.value = '';
+
 }
 
 

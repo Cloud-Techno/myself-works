@@ -1,8 +1,8 @@
-const nameElement = document.getElementById('name');
 const form = document.getElementById('book-form');
+const nameElement = document.getElementById('name');
 const autorElement = document.getElementById('autor');
 const urlElement = document.getElementById('url');
-const cardBody = document.querySelectorAll('.card-body');
+const cardBody = document.querySelectorAll('.card-body')[1];
 
 // objects  create
 
@@ -34,14 +34,17 @@ function addFilm(e){
     const url= urlElement.value;
 
     if (name === '' || autor === "" || url === ""){
-        ui.displayMessage('Please enter Info...','danger');
+       ui.displayMessage('Please enter Info...','danger');
     }
     else {
         const newBook = new Book(name,autor,url);
 
         ui.addBookToUI(newBook);
         storage.addBookToStorage(newBook);
+        ui.displayMessage('Successful...','success');
     }
+
+    ui.clearInputs(nameEement1,autorElement,urlElement);
 e.preventDefault();
 }
 
