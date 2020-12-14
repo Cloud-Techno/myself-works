@@ -1,7 +1,7 @@
-//BOOK CONTRUSTOR
+// BOOK CONSTRUCTOR
 
-function Book(name,autor,url){
-    this.name = name;
-    this.autor = autor;
-    this.url = url;
+function Book (title,autor,url){
+    title = title;
+    autor = autor;
+    url = url;
 }

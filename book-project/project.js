@@ -1,55 +1,17 @@
 const form = document.getElementById('book-form');
-const nameElement = document.getElementById('name');
+const titleElement = document.getElementById('title');
 const autorElement = document.getElementById('autor');
-const urlElement = document.getElementById('url');
-const cardBody = document.querySelectorAll('.card-body')[1];
+const urlElement= document.getElementById('url');
 
-// objects  create
 
-const ui = new UI();
+//create and invoke Object
 
-// storage object create
+const ui = new UI;
 
-const storage = new Storage();
-
-//ALL event create
 
 eventListener();
 
 function eventListener(){
-    form.addEventListener('submit',addFilm);
-    document.addEventListener('DOMContentLoaded',function(){
-        let books = storage.getBookFromStorage();
-        ui.loadAllBooks(books);
-    });
-    cardBody.addEventListener('click',deleteBook);
-
-    
-}
 
 
-function addFilm(e){
-    const name= nameElement.value;
-    const autor= autorElement.value;
-    const url= urlElement.value;
-
-    if (name === '' || autor === "" || url === ""){
-       ui.displayMessage('Please enter Info...','danger');
-    }
-    else {
-        const newBook = new Book(name,autor,url);
-
-        ui.addBookToUI(newBook);
-        storage.addBookToStorage(newBook);
-        ui.displayMessage('Successful...','success');
-    }
-
-    ui.clearInputs(nameEement1,autorElement,urlElement);
-e.preventDefault();
-}
-
-function deleteBook(e){
-    if ( e.target.id === 'delete-book'){
-        ui.deleteBookFromUI(e.target)
-    }
 }
