@@ -4,15 +4,22 @@ const autorElement = document.getElementById('autor');
 const urlElement= document.getElementById('url');
 
 
-//create and invoke Object
+//create UI Object
 
 const ui = new UI;
+
+//create Storage Object
+const storage = new Storage();
 
 
 eventListener();
 
 function eventListener(){
     form.addEventListener("submit",addBook);
+   document.addEventListener('DOMContentLoaded',function(){
+       let books = storage.getBookFromStorage();
+       ui.loadAllBooks(books);
+   })
 
 
 }
@@ -30,6 +37,7 @@ function addBook(e){
 else{
     const newBook = new Book(title,autor,url);
     ui.addBookToUI(newBook);
+    storage.addBookToStorage(newBook);
     ui.displayMessage('Successfull...','success');
 }
   
