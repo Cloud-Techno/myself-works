@@ -22,14 +22,15 @@ function addBook(e){
     const autor = autorElement.value;
     const url = urlElement.value;
     
-    if(title ==="" || autor===''|| url===""){
-        //hata mesaji
+    if(title === "" || autor === ""|| url === "" ){
+        ui.displayMessage('Please enter all info...','danger');
     }
 
 
 else{
     const newBook = new Book(title,autor,url);
     ui.addBookToUI(newBook);
+    ui.displayMessage('Successfull...','success');
 }
   
     e.preventDefault();
