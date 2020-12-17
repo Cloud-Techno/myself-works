@@ -1,0 +1,20 @@
+[
+    {
+        "name":"Ferdi",
+        "department":"IT",
+        "salary":"1000"
+
+    },
+    {
+        "name":"Derya",
+        "department":"Personal",
+        "salary":"2000"
+
+    },
+    {
+        "name":"Vedat",
+        "department":"CEO",
+        "salary":"3000"
+
+    }
+]
