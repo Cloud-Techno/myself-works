@@ -14,7 +14,7 @@ eventListener();
     document.addEventListener('DOMContentLoaded', function(){
         const books = storage.getBookFromStorage();
 
-        ui.loadAllBooks();
+        ui.loadAllBooks(books);
 
     })
 
