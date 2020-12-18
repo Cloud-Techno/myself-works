@@ -3,38 +3,39 @@ const titleElement = document.getElementById('title');
 const autorElement = document.getElementById('autor');
 const urlElement = document.getElementById('url');
 
+
 const ui = new UI();
 const storage = new Storage();
 
 eventListener();
 
-function eventListener(){
+ function eventListener(){
     form.addEventListener('submit',addBook);
-}
+    document.addEventListener('DOMContentLoaded', function(){
+        const books = storage.getBookFromStorage();
 
-function addBook(e){
+        ui.loadAllBooks();
 
-        const title = titleElement.value;
-        const autor = autorElement.value;
-        const url = urlElement.value;
+    })
 
-        
+ }  
 
-        if (title ==='' || autor===''|| url===''){
-            ui.displayMessage('lutfen bir deger girin','danger');
-        }
-        else {
-            const newBook = new Book(title,autor,url);
+ function addBook(e){
+     const title = titleElement.value;
+     const autor = autorElement.value;
+     const url = urlElement.value;
+    
 
-            ui.addBookToUI(newBook);
-            storage.addBookToStorage(newBook);
-            ui.displayMessage('basariyla eklendi....','success');
+     if (title === '' || autor === "" || url === ""){
+        ui.displayMessages('Please enter all info....','danger');
+     }
+     else{
+         const newBook = new Book(title,autor,url);
 
-            
-        }
-
-
-
-
-    e.preventDefault();
-}
+        ui.addBookToUI(newBook);
+         storage.addBookToStorage(newBook);
+         ui.displayMessages('Successful....','success');
+     }
+     ui.clearInputs(titleElement,autorElement,urlElement);
+     e.preventDefault();
+ }
