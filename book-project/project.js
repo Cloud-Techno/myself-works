@@ -2,6 +2,7 @@ const form = document.getElementById('book-form');
 const titleElement = document.getElementById ('title');
 const autorElement = document.getElementById('autor');
 const urlElement = document.getElementById('url');
+const cardBody = document.querySelectorAll('.card-body')[1];
 
 const ui = new UI();
 const storage = new Storage();
@@ -10,6 +11,7 @@ eventListener();
 
 function eventListener(){
     form.addEventListener('submit',addBook);
+    cardBody.addEventListener('click',deleteItem);
     document.addEventListener('DOMContentLoaded',function(){
         const books = storage.getBookFromStorage();
 
@@ -42,3 +44,8 @@ function addBook(e){
     e.preventDefault();
 }
 
+function deleteItem(e){
+    if (e.target.id === 'delete-book'){
+        ui.deleteBookToUI(e.target);
+    }
+}

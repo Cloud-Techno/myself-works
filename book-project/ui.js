@@ -31,9 +31,10 @@ UI.prototype.addBookToUI = function (newBook){
     
     }
 
+UI.prototype.deleteBookToUI = function(element){
+    element.parentElement.parentElement.remove();
 
-
-
+}
 UI.prototype.clearInputs= function(element1,element2,element3){
     element1.value = '';
     element2.value = '';
