@@ -10,6 +10,12 @@ eventListener();
 
 function eventListener(){
     form.addEventListener('submit',addBook);
+    document.addEventListener('DOMContentLoaded',function(){
+        const books = storage.getBookFromStorage();
+
+        ui.loadAllBooks(books);
+
+    })
 }
 
 function addBook(e){
