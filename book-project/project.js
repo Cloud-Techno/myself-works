@@ -13,9 +13,9 @@ function eventListener(){
 
 function addBook(e){
 
-    const title= titleElement.value();
-    const autor= autorElement.value();
-    const url= urlElement.value();
+    const title = titleElement.value;
+    const autor = autorElement.value;
+    const url = urlElement.value;
 
     if (title ==='' || autor === "" || url === ''){
         //displaye messages
