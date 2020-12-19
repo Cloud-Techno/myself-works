@@ -4,6 +4,7 @@ const autorElement = document.getElementById('autor');
 const urlElement = document.getElementById('url');
 
 const ui = new UI();
+const storage = new Storage();
 
 eventListener();
 
@@ -25,6 +26,7 @@ function addBook(e){
         const newBook = new Book(title,autor,url);
 
         ui.addBookToUI(newBook);
+        storage.addBookToStorage(newBook);
 
     }
 
