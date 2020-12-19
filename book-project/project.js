@@ -18,7 +18,7 @@ function addBook(e){
     const url = urlElement.value;
 
     if (title ==='' || autor === "" || url === ''){
-        //displaye messages
+       ui.displayMessages('please enter all input','danger');
     }
     else {
 
@@ -30,7 +30,7 @@ function addBook(e){
 
 
 
-
+    ui.clearInputs(titleElement,autorElement,urlElement);
     e.preventDefault();
 }
 
