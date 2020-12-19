@@ -22,7 +22,7 @@ UI.prototype.clearInputs= function(element1,element2,element3){
 }
 
 UI.prototype.displayMessages = function (message,type){
-    const cardBody= document.getElementById('card-body');
+    const cardBody= document.querySelector('.card-body');
 
     const div = document.createElement('div');
 
