@@ -39,3 +39,5 @@ eventListener();
      ui.clearInputs(titleElement,autorElement,urlElement);
      e.preventDefault();
  }
+ 
+ console.log('%cproject.js line:43 object', 'color: #007acc;', object);

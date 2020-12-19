@@ -14,6 +14,19 @@ UI.prototype.addBookToUI = function(newBook){
             </tr>
       `;
 }
+UI.prototype.loadAllBooks = function(books){
+    const bookList = document.getElementById('books');
+
+    books.forEach(function(book){
+        bookList.innerHTML +=`
+        <tr>
+            <td><img src="${book.url}" class="img-fluid img-thumbnail"></td>
+            <td>${book.title}</td>
+            <td>${book.autor}</td>
+            <td><a href="#" id = "delete-book" class = "btn btn-danger">Filmi Sil</a></td>
+            </tr>`;
+    });
+}
 
 UI.prototype.displayMessages= function(message,type){
     const cardBody = document.querySelector('.card-body');
@@ -31,16 +44,4 @@ UI.prototype.clearInputs = function (element1,element2,element3){
     element3.value = '';
 }
 
-UI.prototype.loadAllBooks = function(books){
-    const bookList = document.getElementById('books');
-
-    books.forEach(function(book){
-        bookList.innerHTML +=`
-        <tr>
-            <td><img src="${book.url}" class="img-fluid img-thumbnail"></td>
-            <td>${book.title}</td>
-            <td>${book.autor}</td>
-            <td><a href="#" id = "delete-book" class = "btn btn-danger">Filmi Sil</a></td>
-            </tr>`;
-    });
-}
+console.log(this);
