@@ -18,7 +18,7 @@ function addBook(e){
     const url = urlElement.value;
 
     if (title ==='' || autor === "" || url === ''){
-       ui.displayMessages('please enter all input','danger');
+       ui.displayMessage('please enter all input','danger');
     }
     else {
 
