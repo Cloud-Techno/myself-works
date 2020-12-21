@@ -24,6 +24,8 @@ function addBook(e){
     }
     else{
         const newBook = new Book(title,autor,url);
+
+        ui.addBookToUI(newBook);
     }
 
 
