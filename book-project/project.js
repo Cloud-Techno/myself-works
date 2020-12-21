@@ -11,6 +11,12 @@ eventListener();
 
 function eventListener(){
     form.addEventListener('submit',addBook);
+    document.addEventListener('DOMContentLoaded',function(){
+        let books = storage.getBookFromStorage();
+         ui.loadAllBooks(books);
+   
+
+    });
 
 }
 
@@ -28,8 +34,8 @@ function addBook(e){
 
         ui.addBookToUI(newBook);
         storage.addBookToStorage(newBook);
+       
     }
-
 
 
     e.preventDefault();

@@ -10,7 +10,7 @@ UI.prototype.addBookToUI=function(newBook){
             <tr>
             <td><img src="${newBook.url}" class="img-fluid img-thumbnail"></td>
             <td>${newBook.title}</td>
-            <td>${newBook.url}</td>
+            <td>${newBook.autor}</td>
             <td><a href="#" id = "delete-book" class = "btn btn-danger">Filmi Sil</a></td>
             </tr>
              `;
@@ -29,5 +29,18 @@ setTimeout(function(){
     div.remove();
 },2000);
 }
-
+UI.prototype.loadAllBooks= function(books){
+    let bookList = document.getElementById('books');
+   
+    books.forEach(book => {
+        bookList.innerHTML +=`
+        <tr>
+            <td><img src="${book.url}" class="img-fluid img-thumbnail"></td>
+            <td>${book.title}</td>
+            <td>${book.autor}</td>
+            <td><a href="#" id = "delete-book" class = "btn btn-danger">Filmi Sil</a></td>
+            </tr>
+        `;
+    });
+}
 
