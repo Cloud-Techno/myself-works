@@ -44,3 +44,7 @@ UI.prototype.loadAllBooks= function(books){
     });
 }
 
+UI.prototype.deleteBookFromUI= function(element){
+    element.parentElement.parentElement.remove();
+    
+}

@@ -2,7 +2,7 @@ const form = document.getElementById ('book-form');
 const titleElement = document.getElementById('title');
 const autorElement = document.getElementById('autor');
 const urlElement = document.getElementById('url');
-
+const cardBody = document.querySelectorAll('.card-body')[1];
 
 const ui = new UI();
 const storage = new Storage();
@@ -11,13 +11,11 @@ eventListener();
 
 function eventListener(){
     form.addEventListener('submit',addBook);
+    cardBody.addEventListener('click',deleteBook);
     document.addEventListener('DOMContentLoaded',function(){
         let books = storage.getBookFromStorage();
          ui.loadAllBooks(books);
-   
-
-    });
-
+      });
 }
 
 function addBook(e){
@@ -39,4 +37,7 @@ function addBook(e){
 
 
     e.preventDefault();
+}
+function deleteBook(e){
+    ui.deleteBookFromUI(e.target);
 }
