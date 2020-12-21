@@ -4,6 +4,9 @@ const autorElement = document.getElementById('autor');
 const urlElement = document.getElementById('url');
 const cardBody = document.querySelectorAll('.card-body')[1];
 
+
+
+//create Object
 const ui = new UI();
 const storage = new Storage();
 
@@ -46,6 +49,6 @@ function addBook(e){
 
 function deleteItem(e){
     if (e.target.id === 'delete-book'){
-        ui.deleteBookToUI(e.target);
+        ui.deleteBookFromUI(e.target);
     }
 }
