@@ -33,6 +33,11 @@ div.className = `alert alert-${type}`;
 div.textContent = message;
 
 cardBody.appendChild(div);
+
+setTimeout(function(){
+    div.remove();
+
+},2000);
 }
 
 
