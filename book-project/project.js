@@ -34,10 +34,15 @@ function addBook(e){
         storage.addBookToStorage(newBook);
        
     }
-
+    ui.clearInputs(titleElement,autorElement,urlElement);
 
     e.preventDefault();
 }
 function deleteBook(e){
-    ui.deleteBookFromUI(e.target);
+    if(e.target.id ==='delete-book'){
+        ui.deleteBookFromUI(e.target);
+       storage.deleteBooksFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+        
+        }
+    
 }
