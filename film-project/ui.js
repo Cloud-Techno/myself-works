@@ -16,6 +16,11 @@ UI.prototype.addFilmToUI = function(newFilm){
     
     `;
 }
+UI.prototype.clearInputs=function(elementTitle,elementDirector,elementUrl){
+    elementTitle = '';
+    elementDirector = '';
+    elementUrl = '';
+}
 
 UI.prototype.displayMessages= function(message,type){
     const cardBody = document.querySelector('.card-body');
