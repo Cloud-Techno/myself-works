@@ -20,8 +20,8 @@ function addFilm(e){
          //Message display
      }
      else {
-         const newBook = new newBook(title,director,url);
-         ui.addBookToUI(newBook);
+         const newFilm = new Film(title,director,url);
+         ui.addFilmToUI(newFilm);
      }
 
      e.preventDefault();
