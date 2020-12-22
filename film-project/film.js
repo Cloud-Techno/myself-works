@@ -1,7 +1,6 @@
 //film project
-function Book (title,autor,url){
+function Film (title,director,url){
     this.title = title;
-    this.autor = autor;
+    this.director = director;
     this.url = url;
- 
-}
+ }
