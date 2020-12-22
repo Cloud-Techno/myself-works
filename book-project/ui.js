@@ -44,12 +44,12 @@ UI.prototype.loadAllBooks= function(books){
     });
 }
 
-UI.prototype.deleteBookFromUI= function(element){
-    element.parentElement.parentElement.remove();
- }
-
- UI.prototype.clearInputs= function(elementTitle,elementAutor,elementUrl){
+UI.prototype.clearInputs= function(elementTitle,elementAutor,elementUrl){
     this.elementTitle = '';
     this.elementAutor = '';
     this.elementUrl = '';
     }
+
+UI.prototype.deleteBookFromUI=function(element){
+    element.parentElement.parentElement.remove();
+}

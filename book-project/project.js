@@ -38,11 +38,11 @@ function addBook(e){
 
     e.preventDefault();
 }
+
 function deleteBook(e){
-    if(e.target.id ==='delete-book'){
+    if(e.target.id === 'delete-book'){
         ui.deleteBookFromUI(e.target);
-       storage.deleteBooksFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
-        
-        }
-    
+        storage.deleteBookFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+        ui.displayMessages('book was marked as unreadable')
+    }
 }
