@@ -25,6 +25,6 @@ function addFilm(e){
          ui.displayMessages('Succesfull...','success');
          
      }
-
+     ui.clearInputs(titleElement,directorElement,urlElement);
      e.preventDefault();
 }
