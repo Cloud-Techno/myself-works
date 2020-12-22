@@ -1,4 +1,4 @@
-const form = document.getElementById('book-form');
+const form = document.getElementById('film-form');
 const titleElement = document.getElementById('title');
 const directorElement = document.getElementById('director');
 const urlElement = document.getElementById('url');
@@ -17,11 +17,13 @@ function addFilm(e){
      const url = urlElement.value;
 
      if(title === '' || director === "" || url===""){ // check to input value fill or empty????
-         //Message display
+         ui.displayMessages('Fill the all input Please...','danger');
      }
      else {
          const newFilm = new Film(title,director,url);
          ui.addFilmToUI(newFilm);
+         ui.displayMessages('Succesfull...','success');
+         
      }
 
      e.preventDefault();
