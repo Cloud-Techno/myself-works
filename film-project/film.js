@@ -1,8 +1,7 @@
-//Film Constructor
-class Film {
-    constructor(title,director,url){
-        this.title = title;
-        this.director = director;
-        this.url = url;
-    }
+//film project
+function Book (title,autor,url){
+    this.title = title;
+    this.autor = autor;
+    this.url = url;
+ 
 }
