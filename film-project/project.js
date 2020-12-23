@@ -18,12 +18,13 @@ function addFilm(e){
 
     if (title === '' || director ===''|| url ===""){
 
-        //hata message
+        ui.displayMessages('Fill all inputs please...','danger');
     }
         else{
  const newFilm = new Film (title,director,url);
 
         ui.addFilmToUI(newFilm);
+        ui.displayMessages('Successfull...','success');
 
         }
 
