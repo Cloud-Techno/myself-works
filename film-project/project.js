@@ -18,10 +18,17 @@ function addFilm(e){
 
     if (title === '' || director ===''|| url ===""){
 
-        const newFilm = new Film (title,director,url);
-
-        ui.addFilmToUI(newBook);
+        //hata message
     }
+        else{
+ const newFilm = new Film (title,director,url);
+
+        ui.addFilmToUI(newFilm);
+
+        }
+
+       
+    
 
     e.preventDefault();
 }
