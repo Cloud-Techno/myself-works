@@ -12,19 +12,16 @@ function eventListener(){
 }
 
 function addFilm(e){
-     const title = titleElement.value;
-     const director = directorElement.value;
-     const url = urlElement.value;
+    const title = titleElement.value;
+    const director = directorElement.value;
+    const url = urlElement.value;
 
-     if(title === '' || director === "" || url===""){ // check to input value fill or empty????
-         ui.displayMessages('Fill the all input Please...','danger');
-     }
-     else {
-         const newFilm = new Film(title,director,url);
-         ui.addFilmToUI(newFilm);
-         ui.displayMessages('Succesfull...','success');
-         
-     }
-     ui.clearInputs(titleElement,directorElement,urlElement);
-     e.preventDefault();
+    if (title === '' || director ===''|| url ===""){
+
+        const newFilm = new Film (title,director,url);
+
+        ui.addFilmToUI(newBook);
+    }
+
+    e.preventDefault();
 }
