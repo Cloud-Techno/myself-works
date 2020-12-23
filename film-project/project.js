@@ -4,6 +4,7 @@ const directorElement = document.getElementById('director');
 const urlElement = document.getElementById('url');
 
 const ui = new UI();
+const storage = new Storage();
 
 eventListener();
 
@@ -25,7 +26,7 @@ function addFilm(e){
 
         ui.addFilmToUI(newFilm);
         ui.displayMessages('Successfull...','success');
-
+        storage.addFilmToStorage(newFilm);
         }
 
        
