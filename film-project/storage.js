@@ -7,7 +7,7 @@ Storage.prototype.addFilmToStorage=function(newFilm){
 
     films.push(newFilm);
 
-    localStorage.setItem(JSON.stringify(films));
+    localStorage.setItem('films',JSON.stringify(films));
 }
 Storage.prototype.getFilmFromStorage=function(){
 
