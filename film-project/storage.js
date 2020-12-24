@@ -26,7 +26,7 @@ Storage.prototype.deleteFilmFromStorage=function(filmTitle){
    
     films.forEach(function(film,index){
         if(film.title === filmTitle){
-            films.splice(index,1);
+            films.splice(index,1);// deleted 1 index
         }
     });
     localStorage.setItem('films',JSON.stringify(films));
