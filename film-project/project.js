@@ -22,7 +22,10 @@ function deleteFilm(e){
     if (e.target.id ==='delete-film')
 
     e.target.parentElement.parentElement.remove();
+    
+    console.log(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
     ui.displayMessages('film is deleted','success');
+    
 
 }
 function addFilm(e){
