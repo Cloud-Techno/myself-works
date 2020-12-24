@@ -22,8 +22,8 @@ function deleteFilm(e){
     if (e.target.id ==='delete-film')
 
     e.target.parentElement.parentElement.remove();
+    storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent)
     
-    console.log(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
     ui.displayMessages('film is deleted','success');
     
 
