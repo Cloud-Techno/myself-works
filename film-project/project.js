@@ -3,6 +3,7 @@ const titleElement = document.getElementById('title');
 const directorElement = document.getElementById('director');
 const urlElement = document.getElementById('url');
 const cardBody = document.querySelectorAll('.card-body')[1];
+const clearFilm = document.getElementById('clear-films');
 
 const ui = new UI();
 const storage = new Storage();
@@ -12,18 +13,22 @@ eventListener();
 function eventListener(){
     form.addEventListener('submit',addFilm);
     cardBody.addEventListener('click',deleteFilm);
+    clearFilm.addEventListener('click',deleteAllFilms);
     document.addEventListener('DOMContentLoaded',function(){
         let films = storage.getFilmFromStorage();
         ui.loadAllFilms(films);
 
     });
 }
+function deleteAllFilms(){
+    ui.deleteAllFilmsFromUI();
+    storage.deleteAllFilmsFromStorage();
+}
 function deleteFilm(e){
     if (e.target.id ==='delete-film')
 
     e.target.parentElement.parentElement.remove();
-    storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent)
-    
+    storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
     ui.displayMessages('film is deleted','success');
     
 

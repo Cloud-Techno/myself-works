@@ -28,7 +28,11 @@ UI.prototype.displayMessages = function(message,type){
     div.className = `alert alert-${type}`;
     div.textContent = message;
 
-    cardBody.appendChild(div);
+    cardBody.appendChild(div); 
+    setTimeout(function(){
+       div.remove();
+    },2000);
+
 }
 UI.prototype.loadAllFilms= function(films){
     const filmList = document.getElementById('films');
@@ -47,7 +51,7 @@ UI.prototype.loadAllFilms= function(films){
    
 }
 
-UI.prototype.deleteAllFilmsFromStorage=function(){
+UI.prototype.deleteAllFilmsFromUI=function(){
     const filmList = document.getElementById('films');
 
     while(filmList.firstElementChild !==null){ // check there is child or not
