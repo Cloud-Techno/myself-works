@@ -25,7 +25,7 @@ Storage.prototype.deleteFilmFromStorage=function(filmTitle){
     let films = this.getFilmFromStorage();
    
     films.forEach(function(film,index){
-        if(film.title === 'filmTitle'){
+        if(film.title === filmTitle){
             films.splice(index,1);
         }
     });
