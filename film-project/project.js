@@ -21,8 +21,12 @@ function eventListener(){
     });
 }
 function deleteAllFilms(){
-    ui.deleteAllFilmsFromUI();
+    if (confirm('Are You sure to clean all film!...')){
+ ui.deleteAllFilmsFromUI();
     storage.deleteAllFilmsFromStorage();
+
+    }
+   
 }
 function deleteFilm(e){
     if (e.target.id ==='delete-film')
