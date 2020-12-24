@@ -46,3 +46,11 @@ UI.prototype.loadAllFilms= function(films){
     })
    
 }
+
+UI.prototype.deleteAllFilmsFromStorage=function(){
+    const filmList = document.getElementById('films');
+
+    while(filmList.firstElementChild !==null){ // check there is child or not
+        filmList.firstElementChild.remove();
+    }
+}
