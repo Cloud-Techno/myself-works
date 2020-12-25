@@ -35,3 +35,14 @@ function getAllLangs(){
 
 addLang('Go',getAllLangs);
 
+/*
+
+* output
+Added
+Python
+Java
+C++
+Go
+ */
+/////////////////////////
+
