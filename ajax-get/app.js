@@ -8,7 +8,10 @@ class Request{
         this.xhr.open("GET",url);
         this.xhr.onload= () =>{
             if (this.xhr.status === 200) {
-                callback(this.xhr.responseText);
+                callback(null,this.xhr.responseText);
+            }
+            else{
+                console.log('ERROR...',null)
             }
         };
         this.xhr.send();
@@ -17,6 +20,9 @@ class Request{
 
 const request = new Request();
 
-request.get('https://jsonplaceholder.typicode.com/albums',function(response){
-    console.log(response);
+request.get('https://jsonplaceholder.typicode.com/albums',function(err,response){
+    if (err === null){
+        //successfully
+        console.log(response);
+    }
 });
