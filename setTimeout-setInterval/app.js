@@ -6,8 +6,14 @@
 *   },5000);
 */
 
-let i =0;
+const love = 'love';
+
+let i = 0;
 let value = setInterval(function(){
     i++;
-    console.log('Number:',i);
+    console.log('I',love,"You",i);
 },1000);
+// clearInterval works for stop setInterval
+document.getElementById('btn').addEventListener('click',function(){
+    clearInterval(value);
+});
