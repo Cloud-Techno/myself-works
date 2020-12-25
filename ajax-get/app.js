@@ -25,4 +25,7 @@ request.get('https://jsonplaceholder.typicode.com/albums',function(err,response)
         //successfully
         console.log(response);
     }
+    else{
+        console.log(err);
+    }
 });
