@@ -32,9 +32,25 @@ class Request{
         }
         this.xhr.send(JSON.stringify(data));
     }
-    
-}
+    put(url,data,callback){
+        this.xhr.open('PUT',url);
+        this.xhr.setRequestHeader('Content-type','application/json'); //json adjusted
 
+        this.xhr.onload=()=>{
+            if(this.xhr.status ===200){
+                callback(null,this.xhr.responseText);
+            }
+            else{
+                console.log('there is sth wrong on put',null);
+            }
+        }
+        this.xhr.send(JSON.stringify(data));
+    }
+
+
+
+
+    }
 const request = new Request;
 /* request.get('https://jsonplaceholder.typicode.com/albums',function(err,response){
     if (err==null){
@@ -44,7 +60,21 @@ const request = new Request;
         console.log(err)
     }
 }); */
+
+/////////
+/* 
 request.post("https://jsonplaceholder.typicode.com/albums",{userId:2,title:"Thriller"},function(err,album){
+    if (err==null){
+        console.log(album);
+    }
+    else{
+        console.log(err)
+    }
+});
+ *///
+ ///////////////
+
+request.put("https://jsonplaceholder.typicode.com/albums/10",{userId:133,title:"Evanescence"},function(err,album){
     if (err==null){
         console.log(album);
     }
