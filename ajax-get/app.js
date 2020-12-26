@@ -27,7 +27,7 @@ class Request{
                 callback(null,this.xhr.responseText);
             }
             else{
-                console.log('there is sth wrong on post',null);
+                console.log('ERROR ON POST',null);
             }
         }
         this.xhr.send(JSON.stringify(data));
@@ -41,16 +41,25 @@ class Request{
                 callback(null,this.xhr.responseText);
             }
             else{
-                console.log('there is sth wrong on put',null);
+                console.log('ERROR ON PUT',null);
             }
         }
         this.xhr.send(JSON.stringify(data));
     }
-
-
-
-
+    delete(url,callback){
+        this.xhr.open('DELETE',url);
+        this.xhr.onload= ()=>{
+            if(this.xhr.status ===200){
+                callback(null,this.xhr.responseText);
+            }
+            else{
+                //hata durumunda
+                callback('ERROR ON DELETE',null);
+            }
+        }
+        this.xhr.send();
     }
+  }
 const request = new Request;
 /* request.get('https://jsonplaceholder.typicode.com/albums',function(err,response){
     if (err==null){
@@ -74,7 +83,17 @@ request.post("https://jsonplaceholder.typicode.com/albums",{userId:2,title:"Thri
  *///
  ///////////////
 
-request.put("https://jsonplaceholder.typicode.com/albums/10",{userId:133,title:"Evanescence"},function(err,album){
+/* request.put("https://jsonplaceholder.typicode.com/albums/10",{userId:133,title:"Evanescence"},function(err,album){
+    if (err==null){
+        console.log(album);
+    }
+    else{
+        console.log(err)
+    }
+}); */
+/////////
+
+request.delete("https://jsonplaceholder.typicode.com/albums/10",function(err,album){
     if (err==null){
         console.log(album);
     }
