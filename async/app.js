@@ -1,25 +1,39 @@
-/* async function test(data){
-   return data;
-}
+class Request{
 
-test('Hello World').then(response=> console.log(response)); */
-
-async function testData(data){
-
-    let promise = new Promise((resolve,reject)=>{
-        setTimeout(function(){
-            if(typeof data ==='string'){
-                resolve(data)
+    async get(url){
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    }
+    async post (url,data){
+        const response = await fetch(url,{
+            method:'POST',
+            body: JSON.stringify(data),
+            headers:{
+                'Content-type':'application/json; charset-UTF-8'
             }
-            else{
-                reject(new Error('Please enter a string value'))
-            }           
-        },5000)
-    });
-    const response = await promise;
-    return response;
+        })
+        const responsedata = await response.json();
+        return responsedata;
+    }
+    async put (url,data){
+        const response = await fetch(url,{
+            method:'PUT',
+            body: JSON.stringify(data),
+            headers:{
+                'Content-type':'application/json; charset-UTF-8'}
+        });
+        const responsedata = await response.json();
+        return responsedata;
+    }
+    async delete(url){
+        const response = await fetch('https://jsonplaceholder.typicode.com/albums/1',{
+            method:'DELETE' });// Response Object
+        return ('Deleting process is successfully')
+    }
 }
+const request = new Request();
 
-testData(3)
-.then(data => console.log(data))
-.catch(err => console.log(err))
+request.get('https://jsonplaceholder.typicode.com/albums/')
+.then(albums =>console.log(albums))
+
