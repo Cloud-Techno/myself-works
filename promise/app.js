@@ -1,4 +1,4 @@
-function getData(data){
+/* function getData(data){
     return new Promise(function(resolve,reject){
    setTimeout(function(){     
         if(typeof data === 'string'){
@@ -13,13 +13,13 @@ function getData(data){
 
 getData('naber')
 .then(response => console.log('this is :'+ response))
-.catch(err => console.error(err));
+.catch(err => console.error(err)); */
 
 
 //////////////////////////
 
 //This statement goals for processing two response
-/* function addTwo(data){
+function addTwo(data){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
             if (typeof data === 'number'){
@@ -40,4 +40,4 @@ addTwo(10)
     return response + 2; })
 .then(function(response2){
     console.log(response2)})
-.catch(err=>console.log(err));  */
+.catch(err=>console.log(err)); 
