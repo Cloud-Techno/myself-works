@@ -38,7 +38,7 @@ class Request{
 
         this.xhr.onload=()=>{
             if(this.xhr.status ===200){
-                callback(null,this.xhr.responseText);
+                callback(null,'delete process is successful');
             }
             else{
                 console.log('ERROR ON PUT',null);
