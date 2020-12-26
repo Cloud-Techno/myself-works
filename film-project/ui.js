@@ -53,8 +53,7 @@ UI.prototype.loadAllFilms= function(films){
 
 UI.prototype.deleteAllFilmsFromUI=function(){
     const filmList = document.getElementById('films');
-
-    while(filmList.firstElementChild !==null){ // check there is child or not
+    while(filmList.firstElementChild !== null){
         filmList.firstElementChild.remove();
     }
 }
