@@ -17,25 +17,7 @@ function eventListener(){
     document.addEventListener('DOMContentLoaded',function(){
         let films = storage.getFilmFromStorage();
         ui.loadAllFilms(films);
-
     });
-}
-function deleteAllFilms(){
-    if (confirm('Are You sure to clean all film!...')){
- ui.deleteAllFilmsFromUI();
-    storage.deleteAllFilmsFromStorage();
-
-    }
-   
-}
-function deleteFilm(e){
-    if (e.target.id ==='delete-film')
-
-    e.target.parentElement.parentElement.remove();
-    storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
-    ui.displayMessages('film is deleted','success');
-    
-
 }
 function addFilm(e){
     const title = titleElement.value;
@@ -43,7 +25,6 @@ function addFilm(e){
     const url = urlElement.value;
 
     if (title === '' || director ===''|| url ===""){
-
         ui.displayMessages('Fill all inputs please...','danger');
     }
         else{
@@ -53,9 +34,21 @@ function addFilm(e){
         ui.displayMessages('Successfull...','success');
         storage.addFilmToStorage(newFilm);
         }
-
-       
     ui.clearInputs(titleElement,directorElement,urlElement);
-
     e.preventDefault();
 }
+
+function deleteFilm(e){
+    if (e.target.id ==='delete-film'){
+         e.target.parentElement.parentElement.remove();
+    storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+    }
+}
+
+function deleteAllFilms(){
+    if (confirm('Are You sure to clean all films!...')){
+    ui.deleteAllFilmsFromUI();
+    storage.deleteAllFilmsFromStorage();
+    }
+}
+
