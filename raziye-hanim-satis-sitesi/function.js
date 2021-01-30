@@ -1,29 +1,49 @@
-let products = productList.map((product,index)=>{
-    return `<div class="card">
-    <img src="${product.productImage}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">${product.productName}</h5>
-      <p class="card-text">Calori ${product.totalCalories}</p>
-      <p class="card-text"><small class="text-muted">Price:${product.price}</small></p>
-      <button  id='${index}'type="button" class="btn btn-primary">BUY</button>
-      </div>
-  </div>`
-}).join('')
+function formatDate(pDate){
+  return pDate.toLocaleDateString('de-CH');
+}
 
-document.getElementById('card-products').innerHTML = products;
+function createProductCatalog(pList){
+  return `
+     <table>
+         ${createProductCatalogHeader()}
+         ${createProductLines(pList)}
+     </table>
+  `;
+}
 
-function a (){
-  basket.map((selectedProduct,index)=>{
-    return `<div class="card">
-    <img src="${selectedProduct.productImage}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">${selectedProduct.productName}</h5>
-      <p class="card-text">Calori ${selectedProduct.totalCalories}</p>
-      <p class="card-text"><small class="text-muted">Price:${selectedProduct.price}</small></p>
-      <button  id='${index}'type="button" class="btn btn-primary">remove</button>
-      </div>
-  </div>`
-}).join('')
+function createProductCatalogHeader(){
+  return `
+     <tr>
+         <th>Name</th>
+         <th>Calory</th>
+         <th>Exp. Date</th>
+         <th>Price</th>
+         <th></th>
+         <th></th>
+     </tr>
+  `;
+}
 
-document.getElementById('basket-products').innerHTML = productsBasket;
+function createProductLines(pList){
+  return pList.map( (p, index) => `
+     <tr>
+         <td>${p.productName}</td>
+         <td>${p.totalCalories}</td>
+         <td>${formatDate(p.expireDate)}</td>
+         <td>${p.price}</td>
+         <td><img src="${p.productImage}"></td>
+         <td><button data-renk="kirmizi" id="${index}">add</button></td>
+     </tr>
+ `).join("");
+}
+
+// main
+function addButtonClickedEvent(pEvent){
+  let clickedElement = pEvent.target;
+  if(clickedElement.tagName.toLowerCase() === "button"){
+      let index = parseInt(clickedElement.id);
+      let selectedProduct = productList[index];
+      
+      addToBasket(selectedProduct);
+  }
 }
