@@ -1,6 +1,6 @@
 function addStudentToUI(pNewStudent){
-const students = document.getElementById("students");
-    students.innerHTML += createStudent(pNewStudent);
+    students.innerHTML = createStudent(pNewStudent);
+    totalStudentElement.innerHTML = totalStudent(pNewStudent);
 }
 
 function createStudent(pList){
@@ -28,6 +28,28 @@ function showAlert(type,message){
 
    setTimeout(function(){
 alert.remove();
-   },2000);
+   },1000);
     
 }
+function totalStudent (pRegistredList){
+    return`
+    <tr >
+        <th scope="col"><strong>Total</strong></th>
+        <th scope="col">${pRegistredList.length}</th>
+    </tr>    
+            `;
+       
+    }
+
+    //when clicked the delete button for remove the student. showing alert
+    function showAlertForTotal(type,message){
+        const alertToList = document.createElement('div');
+        alertToList.className = `alert alert-${type}`;
+        alertToList.textContent = message;
+        totalStudentElement.appendChild(alertToList);
+     
+        setTimeout(function(){
+     alertToList.remove();
+        },1000);
+         
+     }

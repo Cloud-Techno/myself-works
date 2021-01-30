@@ -1,64 +1,30 @@
 /**
- * Musterman Okulu tarafindan ogrenci kayit sistemi talebinde bulunuldu;
- * Ogrenci bilgileri girilerek baska bir tabloya kayit edilmesi
- *  1-kayit sonrasi inputlar temizlenmesi
- *  2-kayit yapildiktan sonra baska bir array icerisinde objeler olusturup tutulmasi
- *  3-kayit sonrasi toplam ogrenci hesaplanacak . array icerisindeki index sayisi uzerinden hesaplanabilir
- *  4-kayit yapilan tabloda delete butono olmasi ve listenin guncellenmesi(toplam ogrenci sayisinin guncellenmesi dahil)
- * 
+ * Musterman Schoool request from us to make a Students Registration System on the Website;
+ *  1-Creating Student Object for Students List Array that include value of Student's information 
+ *  2-Clear Inputs after registration
+ *  3-Calculate Total Students number and show the bottom of site. I can find it by Array lenght. and uptdate after every registration 
+ *  4-Put the Delete button. and give the click event that delete Student Object in Array on Delete Button. 
+ *  5- Let User Know after every click button by alert method.
  */
 
+ // Getting elements from UI 
  const form = document.getElementById("student-form");
  const nameElement = document.getElementById("student-name");
  const surnameElement = document.getElementById("student-surname");
  const ageElement = document.getElementById("student-age");
 const registerCard = document.getElementById("register-card");
 const allStudentListElement = document.getElementById("all-students-list");
-const studentsListElement = document.getElementById("telefon");
+const totalStudentElement = document.getElementById("total-student");
+const students = document.getElementById("students");
 
-let studentList =[];
 
+// all events in this function
 allEventListener();
 
  function allEventListener(){
      form.addEventListener("submit",addStudent);
-     studentsListElement.addEventListener("click",deleteStudent);
+     allStudentListElement.addEventListener("click",deleteStudent);
       
  }
 
- function addStudent(e){
 
-        const name = nameElement.value.trim();
-        const surname = surnameElement.value.trim();
-        const age = ageElement.value.trim();
-
-        if(name ==="" || surname==="" || age===""){
-            // if there is any empty input, will show alert
-            showAlert('danger',"Please fill all information");
-        }
-        else{
-            //New Student Object
-            const newStudent = new Student(name,surname,age);
-
-             // create student list array and then push to new student's information
-            studentList.push(newStudent);
-            addStudentToUI(studentList);
-            showAlert('success',"Successfully")
-        }
-//clear all input value after added
-clearInputs(nameElement,surnameElement,ageElement);
-
-    e.preventDefault();
- }
-
- function deleteStudent(e){
-   /*  let clickedDeleteStudent = e.target;
-    if(clickedDeleteStudent.className.toLowerCase() ==="btn"){
-            let index = parseInt(clickedDeleteStudent.id);
-            
-            studentList.splice(index,1);
-
-            addStudentToUI(studentList);
-    } */
-    console.log(e.target.tagName());
-}
