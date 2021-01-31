@@ -7,11 +7,19 @@
 */
 
 const love = 'love';
-
+let sayac = [];
 let i = 0;
 let value = setInterval(function(){
     i++;
-    console.log('I',love,"You",i);
+    sayac.push("love"); 
+  
+     
+    
+    
+  
+
+  let deneme=  'I ' +sayac +" you";
+  document.getElementById("love").innerHTML = deneme;
 },1000);
 // clearInterval works for stop setInterval
 document.getElementById('btn').addEventListener('click',function(){
